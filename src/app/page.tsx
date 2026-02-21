@@ -1,169 +1,337 @@
 import Link from "next/link";
 
-const services = [
+const whoWeServe = [
   {
-    title: "Cloud Infrastructure",
+    title: "Executive Leadership",
     description:
-      "Design, migration, and management of scalable cloud environments on AWS, Azure, and GCP.",
-    icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
-      </svg>
-    ),
+      "C-Suite and senior executives requiring secure, travel-ready, and resilient technology ecosystems.",
   },
   {
-    title: "Managed IT Services",
+    title: "High-Net-Worth Individuals",
     description:
-      "24/7 monitoring, maintenance, and support so your team can focus on what matters most.",
-    icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
-      </svg>
-    ),
+      "Private advisory for secure personal infrastructure, device governance, and discreet technology planning.",
   },
   {
-    title: "Cybersecurity",
+    title: "Logistics & Operational Organizations",
     description:
-      "Comprehensive security assessments, compliance auditing, and threat protection strategies.",
-    icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Software Development",
-    description:
-      "Custom software solutions, from web applications to internal tools, built with modern technologies.",
-    icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-      </svg>
-    ),
+      "Companies requiring workflow automation, operational visibility, and structured infrastructure.",
   },
 ];
 
-const stats = [
-  { value: "150+", label: "Clients served" },
-  { value: "99.9%", label: "Uptime SLA" },
-  { value: "24/7", label: "Support available" },
-  { value: "10+", label: "Years of experience" },
+const services = [
+  {
+    title: "Executive Technology Infrastructure",
+    items: [
+      "Secure device ecosystems",
+      "Redundancy and backup planning",
+      "Remote access architecture",
+      "Travel-ready configurations",
+      "Private technical advisory",
+    ],
+  },
+  {
+    title: "Governance & Endpoint Strategy",
+    items: [
+      "Microsoft 365 & Intune oversight",
+      "Conditional access architecture",
+      "Executive-grade security baselines",
+      "Lifecycle & provisioning strategy",
+    ],
+  },
+  {
+    title: "Automation & Systems Engineering",
+    items: [
+      "Workflow automation design",
+      "API integrations (Azure / M365 / third-party systems)",
+      "License governance frameworks",
+      "Internal operational tools",
+    ],
+  },
+  {
+    title: "Logistics & Operational Infrastructure",
+    items: [
+      "Asset & inventory tracking systems",
+      "Fleet and operational dashboards",
+      "Process engineering",
+      "Executive-level reporting systems",
+    ],
+  },
+  {
+    title: "Data & Executive Intelligence",
+    items: [
+      "Power BI dashboard development",
+      "Operational analytics",
+      "Usage reporting",
+      "Governance insights",
+    ],
+  },
+];
+
+const engagements = [
+  "Private advisory consultations",
+  "Project-based engagements",
+  "Retainer-based executive support",
+  "Confidential delivery",
 ];
 
 export default function Home() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <div className="max-w-2xl">
-            <p className="text-sm font-medium text-accent tracking-wide uppercase mb-4">
-              IT Services &amp; Consulting
-            </p>
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl leading-[1.1]">
-              Technology that
+      {/* ── HERO ── */}
+      <section className="relative">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10 pt-24 pb-20 md:pt-36 md:pb-28">
+          <div className="max-w-[720px]">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-semibold leading-[1.08] tracking-[-0.02em] text-navy">
+              C-Suite Technology.
               <br />
-              works for you.
+              Engineered for Clarity.
             </h1>
-            <p className="mt-6 text-lg text-muted leading-relaxed max-w-lg">
-              We build and manage reliable IT infrastructure so your business can
-              grow without limits. Simple, scalable, secure.
+            <p className="mt-7 text-[17px] md:text-[19px] leading-[1.65] text-charcoal-light max-w-[580px]">
+              ServiceLabs designs secure, structured, and resilient technology
+              environments for executive leadership, high-net-worth individuals,
+              and operationally complex organizations.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
-                href="/contact"
-                className="rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+                href="#contact"
+                className="inline-block rounded-[6px] bg-navy px-7 py-3.5 text-[13px] font-medium tracking-[0.04em] text-white transition-colors hover:bg-navy-light"
               >
-                Start a Project
+                Request Private Consultation
               </Link>
               <Link
-                href="/services"
-                className="rounded-lg border border-border px-6 py-3 text-sm font-medium text-primary transition-colors hover:bg-light"
+                href="#contact"
+                className="inline-block text-[13px] tracking-[0.04em] text-muted hover:text-navy transition-colors"
               >
-                Our Services
+                Contact
               </Link>
             </div>
           </div>
-        </div>
-        <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-accent/5 blur-3xl" />
-      </section>
-
-      {/* Stats */}
-      <section className="border-y border-border bg-light">
-        <div className="mx-auto max-w-6xl px-6 py-12">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            {stats.map(({ value, label }) => (
-              <div key={label} className="text-center">
-                <p className="text-3xl font-bold text-primary">{value}</p>
-                <p className="mt-1 text-sm text-muted">{label}</p>
-              </div>
-            ))}
-          </div>
+          <p className="mt-20 text-[12px] tracking-[0.06em] uppercase text-subtle">
+            Selective client engagements.
+          </p>
         </div>
       </section>
 
-      {/* Services */}
-      <section className="py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="max-w-lg">
-            <p className="text-sm font-medium text-accent tracking-wide uppercase mb-2">
-              What we do
-            </p>
-            <h2 className="text-3xl font-bold tracking-tight">
-              Services built for modern businesses
+      {/* ── ABOUT ── */}
+      <section className="border-t border-border-light">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-24 md:py-32">
+          <div className="max-w-[680px] fade-in">
+            <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-semibold leading-[1.15] tracking-[-0.015em] text-navy">
+              Built for Leadership.
             </h2>
-            <p className="mt-4 text-muted leading-relaxed">
-              From cloud infrastructure to cybersecurity, we provide end-to-end
-              IT services tailored to your needs.
-            </p>
+            <div className="mt-8 space-y-5 text-[16px] md:text-[17px] leading-[1.7] text-charcoal-light">
+              <p>
+                ServiceLabs provides private technology advisory and
+                infrastructure engineering for decision-makers. We focus on
+                governance, operational clarity, and long-term sustainability.
+              </p>
+              <p>
+                Technology should operate quietly in the background — secure,
+                organized, and resilient. Our approach prioritizes structure over
+                reaction, systems over shortcuts, and precision over complexity.
+              </p>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            {services.map(({ title, description, icon }) => (
+      {/* ── WHO WE SERVE ── */}
+      <section className="bg-surface border-t border-border-light">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-24 md:py-32">
+          <h2 className="fade-in text-[clamp(1.75rem,3.5vw,2.5rem)] font-semibold leading-[1.15] tracking-[-0.015em] text-navy">
+            Who We Serve
+          </h2>
+          <div className="mt-14 grid gap-8 md:grid-cols-3 stagger">
+            {whoWeServe.map(({ title, description }) => (
               <div
                 key={title}
-                className="group rounded-xl border border-border p-6 transition-colors hover:border-accent/30 hover:bg-light"
+                className="fade-in border border-border bg-white rounded-[8px] p-8 md:p-10"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
-                  {icon}
-                </div>
-                <h3 className="mt-4 text-lg font-semibold">{title}</h3>
-                <p className="mt-2 text-sm text-muted leading-relaxed">
+                <h3 className="text-[18px] font-semibold text-navy leading-tight">
+                  {title}
+                </h3>
+                <p className="mt-4 text-[15px] leading-[1.7] text-charcoal-light">
                   {description}
                 </p>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="mt-12 text-center">
-            <Link
-              href="/services"
-              className="text-sm font-medium text-accent hover:underline"
-            >
-              View all services &rarr;
-            </Link>
+      {/* ── CORE SERVICES ── */}
+      <section className="border-t border-border-light">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-24 md:py-32">
+          <h2 className="fade-in text-[clamp(1.75rem,3.5vw,2.5rem)] font-semibold leading-[1.15] tracking-[-0.015em] text-navy">
+            Core Services
+          </h2>
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3 stagger">
+            {services.map(({ title, items }) => (
+              <div
+                key={title}
+                className="fade-in group border border-border rounded-[8px] p-8 md:p-10 transition-all duration-300 hover:border-navy/20 hover:shadow-[0_2px_20px_rgba(27,42,88,0.06)]"
+              >
+                <h3 className="text-[17px] font-semibold text-navy leading-tight">
+                  {title}
+                </h3>
+                <ul className="mt-5 space-y-2.5">
+                  {items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 text-[14px] leading-[1.6] text-charcoal-light"
+                    >
+                      <span className="mt-[7px] block h-[5px] w-[5px] shrink-0 rounded-full bg-navy/30" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="border-t border-border bg-light">
-        <div className="mx-auto max-w-6xl px-6 py-20 text-center">
-          <h2 className="text-3xl font-bold tracking-tight">
-            Ready to modernize your IT?
-          </h2>
-          <p className="mx-auto mt-4 max-w-md text-muted leading-relaxed">
-            Let&apos;s discuss how ServiceLabs can streamline your technology
-            operations and accelerate your business.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-block rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
-          >
-            Get in Touch
-          </Link>
+      {/* ── PHILOSOPHY ── */}
+      <section className="bg-surface border-t border-border-light">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-24 md:py-32">
+          <div className="max-w-[680px] fade-in">
+            <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-semibold leading-[1.15] tracking-[-0.015em] text-navy">
+              Structure Over Chaos.
+            </h2>
+            <div className="mt-8 space-y-5 text-[16px] md:text-[17px] leading-[1.7] text-charcoal-light">
+              <p>Technology environments should reduce friction, not create it.</p>
+              <p>
+                We design systems that are secure, organized, and engineered for
+                long-term resilience — ensuring leadership can focus on
+                decisions, not disruptions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ENGAGEMENT MODEL ── */}
+      <section className="border-t border-border-light">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-24 md:py-32">
+          <div className="max-w-[680px] fade-in">
+            <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-semibold leading-[1.15] tracking-[-0.015em] text-navy">
+              Engagement Approach
+            </h2>
+            <ul className="mt-10 space-y-4">
+              {engagements.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-center gap-4 text-[16px] md:text-[17px] text-charcoal-light"
+                >
+                  <span className="block h-px w-5 bg-navy/30" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-12 text-[13px] tracking-[0.04em] text-subtle">
+              Engagements are structured and selective.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CONTACT ── */}
+      <section id="contact" className="bg-surface border-t border-border-light">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-24 md:py-32">
+          <div className="grid gap-16 md:grid-cols-2 md:gap-20">
+            <div className="fade-in">
+              <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-semibold leading-[1.15] tracking-[-0.015em] text-navy">
+                Request Consultation
+              </h2>
+              <p className="mt-6 text-[15px] leading-[1.7] text-charcoal-light max-w-[400px]">
+                For private inquiries:
+              </p>
+              <p className="mt-1 text-[15px] text-navy font-medium">
+                contact@servicelabs.io
+              </p>
+              <p className="mt-6 text-[13px] tracking-[0.04em] text-subtle">
+                Discretion assured.
+              </p>
+            </div>
+            <div className="fade-in">
+              <ContactForm />
+            </div>
+          </div>
         </div>
       </section>
     </>
+  );
+}
+
+function ContactForm() {
+  return (
+    <form className="space-y-6">
+      <div>
+        <label
+          htmlFor="name"
+          className="block text-[13px] font-medium tracking-[0.02em] text-charcoal mb-2"
+        >
+          Name
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          className="w-full border border-border rounded-[6px] bg-white px-4 py-3 text-[15px] text-charcoal outline-none transition-colors focus:border-navy/40 placeholder:text-subtle"
+        />
+      </div>
+      <div>
+        <label
+          htmlFor="organization"
+          className="block text-[13px] font-medium tracking-[0.02em] text-charcoal mb-2"
+        >
+          Organization{" "}
+          <span className="font-normal text-subtle">(Optional)</span>
+        </label>
+        <input
+          type="text"
+          id="organization"
+          name="organization"
+          className="w-full border border-border rounded-[6px] bg-white px-4 py-3 text-[15px] text-charcoal outline-none transition-colors focus:border-navy/40 placeholder:text-subtle"
+        />
+      </div>
+      <div>
+        <label
+          htmlFor="email"
+          className="block text-[13px] font-medium tracking-[0.02em] text-charcoal mb-2"
+        >
+          Email
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          className="w-full border border-border rounded-[6px] bg-white px-4 py-3 text-[15px] text-charcoal outline-none transition-colors focus:border-navy/40 placeholder:text-subtle"
+        />
+      </div>
+      <div>
+        <label
+          htmlFor="message"
+          className="block text-[13px] font-medium tracking-[0.02em] text-charcoal mb-2"
+        >
+          Message
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          rows={5}
+          required
+          className="w-full border border-border rounded-[6px] bg-white px-4 py-3 text-[15px] text-charcoal outline-none transition-colors focus:border-navy/40 resize-none placeholder:text-subtle"
+        />
+      </div>
+      <button
+        type="submit"
+        className="rounded-[6px] bg-navy px-7 py-3.5 text-[13px] font-medium tracking-[0.04em] text-white transition-colors hover:bg-navy-light"
+      >
+        Schedule Consultation
+      </button>
+    </form>
   );
 }
