@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #1B2A58;
+  --color-navy-light: #243468;
+  --color-navy-dark: #131E40;
+  --color-charcoal: #303030;
+  --color-charcoal-light: #505050;
+  --color-muted: #787878;
+  --color-subtle: #A0A0A0;
+  --color-border: #E8E8E8;
+  --color-border-light: #F0F0F0;
+  --color-surface: #FAFAFA;
+  --color-white: #FFFFFF;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-charcoal);
+  background: var(--color-white);
+  line-height: 1.6;
+}
+
+::selection {
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+
+/* Scroll-triggered fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.stagger > .fade-in:nth-child(1) { transition-delay: 0ms; }
+.stagger > .fade-in:nth-child(2) { transition-delay: 100ms; }
+.stagger > .fade-in:nth-child(3) { transition-delay: 200ms; }
+.stagger > .fade-in:nth-child(4) { transition-delay: 300ms; }
+.stagger > .fade-in:nth-child(5) { transition-delay: 400ms; }
